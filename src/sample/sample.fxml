@@ -9,14 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1134.0" styleClass="background-image" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1134.0" styleClass="background-image" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <bottom>
       <HBox alignment="CENTER" prefHeight="135.0" prefWidth="200.0" spacing="100.0" style="-fx-background-color: rgba(0,0,0,0.5);" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="stoneBtn" mnemonicParsing="false" onAction="#playerTurn" prefHeight="101.0" prefWidth="120.0" style="-fx-background-color: rgba(0,0,0,0);">
+                  <Button fx:id="stoneButton" mnemonicParsing="false" onAction="#playerTurn" prefHeight="101.0" prefWidth="120.0" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
                         <ImageView fitHeight="90.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -25,7 +24,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label text="Stone" textFill="WHITE">
+                  <Label text="Sten" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -34,7 +33,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="paperBtn" mnemonicParsing="false" onAction="#playerTurn" prefHeight="101.0" prefWidth="120.0" style="-fx-background-color: rgba(0,0,0,0);">
+                  <Button fx:id="paperButton" mnemonicParsing="false" onAction="#playerTurn" prefHeight="101.0" prefWidth="120.0" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
                         <ImageView fitHeight="90.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -43,7 +42,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label text="Paper" textFill="WHITE">
+                  <Label text="Saks" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -52,7 +51,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="scissorsBtn" mnemonicParsing="false" onAction="#playerTurn" prefHeight="101.0" prefWidth="120.0" style="-fx-background-color: rgba(0,0,0,0);">
+                  <Button fx:id="scissorsButton" mnemonicParsing="false" onAction="#playerTurn" prefHeight="101.0" prefWidth="120.0" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
                         <ImageView fitHeight="90.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -61,20 +60,26 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label text="Scissors" textFill="WHITE">
+                  <Label text="Papir" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="saveGame" alignment="CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#save" text="Save game" />
+                  <Button fx:id="loadGame" lineSpacing="20.0" mnemonicParsing="false" onAction="#load" text="Load game" />
+               </children>
+            </HBox>
          </children>
       </HBox>
    </bottom>
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0" style="-fx-background-color: rgba(0,0,0,0.5);" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="217.0" text="Player" textFill="WHITE">
+            <Label alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="217.0" text="Spiller" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="48.0" />
                </font>

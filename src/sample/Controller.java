@@ -6,11 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import java.io.IOException;
 
 public class Controller {
-    private static final String PAPER = "paper";
-    private static final String STONE = "stone";
-    private static final String SCISSORS = "scissors";
+    private static final String PAPER = "Papir";
+    private static final String STONE = "Sten";
+    private static final String SCISSORS = "Saks";
     private Image image;
 
     @FXML
@@ -26,21 +27,28 @@ public class Controller {
     private Label result;
 
     @FXML
+    private Button saveGame;
+
+    @FXML
+    private Button loadGame;
+
+    @FXML
     private ImageView computer;
 
     @FXML
     private void playerTurn(ActionEvent event) {
         String playerChoice = null;
+
         switch (((Button) event.getSource()).getId()) {
-            case "paperBtn":
+            case "paperButton":
                 image = new Image("/Image/papir.png");
                 playerChoice = PAPER;
                 break;
-            case "stoneBtn":
+            case "stoneButton":
                 image = new Image("/Image/sten.png");
                 playerChoice = STONE;
                 break;
-            case "scissorsBtn":
+            case "scissorsButton":
                 image = new Image("/Image/saks.png");
                 playerChoice = SCISSORS;
                 break;
@@ -115,4 +123,24 @@ public class Controller {
        }
 
     }
+    @FXML
+    void save(ActionEvent event) throws IOException {
+        Gamedata gameData = new Gamedata();
+        gameData.computerScore = computerScore.getText();
+        gameData.playerScore = playerScore.getText();
+
+        Filehandling filehandling = new Filehandling();
+        filehandling.save(gameData);
+    }
+
+    @FXML
+    void load(ActionEvent event) throws IOException {
+        Filehandling filehandling = new Filehandling();
+        Gamedata gameData;
+        gameData = filehandling.load();
+        computerScore.setText(gameData.computerScore);
+        playerScore.setText(gameData.playerScore);
+    }
+
+
 }
