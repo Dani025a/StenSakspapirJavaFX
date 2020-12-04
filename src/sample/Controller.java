@@ -20,6 +20,7 @@ public class Controller {
     @FXML
     private Label computerScore;
 
+
     @FXML
     private ImageView player;
 
@@ -27,10 +28,10 @@ public class Controller {
     private Label result;
 
     @FXML
-    private Button saveGame;
+    private Label saveGame;
 
     @FXML
-    private Button loadGame;
+    private Label loadGame;
 
     @FXML
     private ImageView computer;
@@ -123,24 +124,27 @@ public class Controller {
        }
 
     }
+
     @FXML
-    void save(ActionEvent event) throws IOException {
+    void save(ActionEvent event) throws IOException{
         Gamedata gameData = new Gamedata();
         gameData.computerScore = computerScore.getText();
         gameData.playerScore = playerScore.getText();
 
         Filehandling filehandling = new Filehandling();
         filehandling.save(gameData);
+        result.setText("Game saved");
     }
 
     @FXML
-    void load(ActionEvent event) throws IOException {
+    void load(ActionEvent event) throws IOException{
         Filehandling filehandling = new Filehandling();
         Gamedata gameData;
         gameData = filehandling.load();
         computerScore.setText(gameData.computerScore);
         playerScore.setText(gameData.playerScore);
-    }
+        result.setText("Game loaded");
 
+    }
 
 }

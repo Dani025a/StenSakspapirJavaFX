@@ -11,10 +11,8 @@ public class Filehandling {
     public void save(Gamedata gameData) throws IOException {
         File file = new File("spildata.txt");
         PrintWriter output = new PrintWriter(file);
-        // Nu skal vi bare skrive data
-        output.println(gameData.computerScore);
         output.println(gameData.playerScore);
-        // Når du lukker filen, så gemmes det
+        output.println(gameData.computerScore);
         output.close();
     }
 
